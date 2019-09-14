@@ -7,7 +7,8 @@
     "start": "node server.js",
     "lint": "eslint --quiet .",
     "fix": "eslint --fix .",
-    "test": "npm run lint && cross-env NODE_ENV=test mocha -u tdd --reporter spec --exit"
+    "test": "npm run lint && cross-env NODE_ENV=test mocha -u tdd --reporter spec --exit",
+    "test2": "mocha -u tdd --reporter spec --exit"
   },
   "license": "MIT",
   "dependencies": {
@@ -24,7 +25,7 @@
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "mocha": "^6.1.4",
+    "mocha": "^6.2.0",
     "prettier": "^1.17.1"
   }
 }
