@@ -1,6 +1,5 @@
 # The SMEP-Manager Application
 
-### Contributors: Peter Tan, Sandra Martinez
+### Contributors: Peter Tan, Sandra Martinez, Magdalene James
 
-This is my line to test git hub stuff :) - Magdalene J. 
 
