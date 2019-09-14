@@ -1,1 +1,3 @@
-# SMEP-Manager
+# The SMEP-Manager Application
+
+### Contributors: Peter Tan
