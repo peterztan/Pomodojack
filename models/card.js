@@ -18,11 +18,11 @@ module.exports = function(sequelize, DataTypes) {
   card.associate = function(models) {
     card.belongsToMany(models.deck, {
       onDelete: "CASCADE",
-      through: deckCard
+      through: models.deckCard
     });
     card.belongsToMany(models.user, {
       onDelete: "CASCADE",
-      through: userCard
+      through: models.userCard
     });
   };
   return card;
