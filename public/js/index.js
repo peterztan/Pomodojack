@@ -30,6 +30,7 @@ var API = {
   }
 };
 
+/*
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshExamples = function() {
   API.getExamples().then(function(data) {
@@ -97,3 +98,11 @@ var handleDeleteBtnClick = function() {
 // Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
+
+*/
+
+/*$(document).ready(function() {
+  console.log("modal");
+  $(".modal").modal();
+  $(".modal").modal("open");
+});*/

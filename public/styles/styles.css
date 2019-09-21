@@ -1,3 +1,20 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+body {
+  background: url('https://media.giphy.com/media/3YHzVE6tPeiBkYSFKx/giphy.gif') no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
+body, html {
+  height: 100%;
+}
+
+.container {
+  background: inherit;
+  backdrop-filter: blur(20px);
+}
