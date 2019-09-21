@@ -12,9 +12,8 @@ module.exports = function(sequelize, DataTypes) {
     // We're saying that a Post should belong to an Author
     // A Post can't be created without an Author due to the foreign key constraint
     deck.belongsTo(models.user, { onDelete: "CASCADE" });
-    deck.belongsToMany(models.card, {
-      onDelete: "CASCADE",
-      through: models.deckCard
+    deck.hasMany(models.card, {
+      onDelete: "CASCADE"
     });
   };
   return deck;
