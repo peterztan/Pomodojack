@@ -14,7 +14,7 @@ module.exports = function(sequelize, DataTypes) {
     deck.belongsTo(models.user, { onDelete: "CASCADE" });
     deck.belongsToMany(models.card, {
       onDelete: "CASCADE",
-      through: deckCard
+      through: models.deckCard
     });
   };
   return deck;
