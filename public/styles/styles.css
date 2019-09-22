@@ -7,14 +7,10 @@ body {
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
+  backdrop-filter: blur(10px);
   height: 100%;
 }
 
 body, html {
   height: 100%;
-}
-
-.container {
-  background: inherit;
-  backdrop-filter: blur(20px);
 }
