@@ -15,13 +15,11 @@ CREATE TABLE deck (
     deckName VARCHAR(100) NOT NULL
     );
     
-    
 CREATE TABLE card (
 	cardID  INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	deckId INT, FOREIGN KEY (deckId) REFERENCES deck(deckId),
-    title VARCHAR(40) NOT NULL,
-    taskDescription VARCHAR(255) NOT NULL
+    cardtitle VARCHAR(40) NOT NULL,
+    cardDescription VARCHAR(255) NOT NULL
 );
-
 
 

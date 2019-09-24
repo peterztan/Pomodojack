@@ -1,7 +1,6 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
   app.get("/api/deck", function(req, res) {
     db.deck
       .findAll({
