@@ -1,8 +1,8 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // GET route for getting all of the cards
-  app.get("/api/posts", function(req, res) {
+  // GET route for getting all of the cards from a deck
+  app.get("/api/card/:deckId", function(req, res) {
     var query = {};
     if (req.query.deckId) {
       query.deckId = req.query.deckId;
