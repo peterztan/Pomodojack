@@ -4,26 +4,48 @@
       <div class="col-8 offset-2">
         <h1>{{msg}}</h1>
         <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
+        <form class="clearfix mb-4">
           <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
+            <label for="deckname">Deck Name</label>
+            <input type="text" id="deckname" class="form-control" aria-describedby="deckname"
+              placeholder="Enter Deck Name" action="/api/deck" method="POST">
           </div>
-          <div class="form-group">
+          {{!-- <div class="form-group">
             <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
+            <textarea class="form-control" id="example-description" aria-describedby="example-description"
+              placeholder="Enter Example Description"></textarea>
+          </div> --}}
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
+        <h3>Decks:</h3>
+        <ul id="deck-list" class="list-group">
+          {{#each deck}}
+          <li data-id="{{this.deckId}}" class="list-group-item">
+            <a href="deck/{{this.deckId}}">{{this.deckName}}</a>
             <button class="btn btn-danger float-right delete">ｘ</button>
           </li>
           {{/each}}
+
+
         </ul>
+
+        <div class="container cards">
+          <div class="row">
+            <div class="col-md-2 col-sm-2">
+              <a class="btn btn-light" href="/cms">New Post</a>
+            </div>
+            <div class="col-md-2 col-sm-2">
+              <a class="btn btn-light" href="/deck">Manage Decks</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 cards-container">
+            </div>
+          </div>
+        </div>
+
+
+
       </div>
     </div>
   </div>
