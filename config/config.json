@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "exampledb",
+    "password": "Aluna19!",
+    "database": "pomodojackdb",
     "host": "localhost",
     "dialect": "mysql"
   },
