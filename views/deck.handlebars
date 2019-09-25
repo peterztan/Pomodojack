@@ -1,43 +1,46 @@
-<div id="home">
-    <div class="container">
-        <div class="row">
-            <div class="col s8 offset-s2">
-                <div class="card-content">
-                    <h5 class="card-title">Deck3</h5>
-                    <h1>{{msg}}</h1>
+<div id="decks" class="container">
+    <div class="row">
+        <div class="col s12">
 
-                    <form class="row">
-                        <div class="input-field">
-                            <form class="clearfix mb-4">
-                                <div class="form-group" action="/api/deck" method="POST">
-                                    <label for="deckname">Deck Name</label>
-                                    <input type="text" id="deckname" class="form-control" aria-describedby="deckname"
-                                        placeholder="Enter Deck Name">
-                                </div>
+            <h1>{{msg}}</h1>
 
-                                <button id="submit" class="btn btn-primary float-right">Submit</button>
-                            </form>
-
-
-                            <h3>Decks:</h3>
-                            <ul id="deck-list" class="collection">
-
-                                {{#each deck}}
-                                <li data-id="{{this.id}}" class="collection-item">
-                                    <a href="deck/{{this.id}}">{{this.deckName}}</a>
-                                    <button
-                                        class="btn-floating btn-large waves-effect waves-light red delete">ｘ</button>
-                                </li>
-                                {{/each}}
-
-
-                            </ul>
-                        </div>
-                </div>
-            </div>
         </div>
+    </div>
+
+    <form class="input-field col s6" action="/api/deck" method="POST">
+        <input type="text" id="deckname" class="validate">
+        <label for="deckname">Deck Name</label>
+        <button id="submit" class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
 
 
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="/js/deck.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <div class="row">
+        <div class="col s12 deck-container">
+            <h3>Decks:</h3>
+            <ul id="deck-list" class="collection">
+
+                {{#each deck}}
+                <li data-id="{{this.deckId}}" class="collection-item">
+                    <a href="deck/{{this.deckId}}">{{this.deckName}}</a>
+                    <button class="btn-floating btn-large waves-effect waves-light red delete">ｘ</button>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12 cards-container">
+            <a class="waves-effect waves-light btn" href="/cms">New Post</a>
+            <a class="waves-effect waves-light btn" href="/deck">Manage Decks</a>
+            <a class="waves-effect btn waves-light" href="/decks">View Decks</a>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/deck.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
