@@ -86,7 +86,7 @@ var handleDeleteBtnClick = function() {
     .parent()
     .attr("data-id");
 
-  API.deleteExample(idToDelete).then(function() {
+  API.deleteDeck(idToDelete).then(function() {
     refreshDecks();
   });
 };

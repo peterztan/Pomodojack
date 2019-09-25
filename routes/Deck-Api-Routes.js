@@ -31,7 +31,7 @@ module.exports = function(app) {
   app.delete("/api/deck/:id", function(req, res) {
     db.Deck.destroy({
       where: {
-        deckid: req.params.id
+        id: req.params.id
       }
     }).then(function(dbDeck) {
       res.json(dbDeck);
