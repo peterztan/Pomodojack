@@ -1,4 +1,4 @@
-var bcryptjs = require("bcryptjs");
+// var bcryptjs = require("bcryptjs");
 
 module.exports = function(sequelize, DataTypes) {
   var Users = sequelize.define("Users", {
