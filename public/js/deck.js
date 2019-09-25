@@ -1,5 +1,6 @@
 // Get references to page elements
 var $deckName = $("#deckName");
+
 var $submitBtn = $("#submit");
 var $deckList = $("#deck-list");
 
@@ -70,6 +71,7 @@ var handleFormSubmit = function() {
 
   if (!deck.deckName) {
     alert("You must enter deck name");
+
     return;
   }
 
@@ -78,6 +80,7 @@ var handleFormSubmit = function() {
   });
 
   $deckName.val("");
+
   // $exampleDescription.val("");
 };
 
@@ -93,6 +96,6 @@ var handleDeleteBtnClick = function() {
   });
 };
 
-// // Add event listeners to the submit and delete buttons
+// Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $deckList.on("click", ".delete", handleDeleteBtnClick);

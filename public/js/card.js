@@ -6,6 +6,7 @@ var $cardList = $("#card-list");
 
 var cards;
 
+
 var url = window.location.search;
 var deckId;
 if (url.indexOf("?deck_id=") !== -1) {
@@ -14,6 +15,7 @@ if (url.indexOf("?deck_id=") !== -1) {
 } else {
   getPosts();
 }
+
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -105,7 +107,7 @@ var handleFormSubmit = function(event) {
     refreshCards();
   });
 
-  $cardName.val("");
+
   $cardDescription.val("");
 };
 

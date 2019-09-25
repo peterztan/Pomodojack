@@ -16,21 +16,8 @@ body,
 html {
   height: 100%;
 }
+
 .card-fan {
   position: absolute;
   width: 200px;
   transform-origin: bottom;
-  transition: all 0.3s linear;
-}
-.cards-fan-container:hover #ten-fan {
-  transform: rotate(20deg);
-}
-.cards-fan-container:hover #ace-fan {
-  transform: rotate(-20deg);
-}
-.cards-fan-container:hover #jack-fan {
-  transform: rotate(10deg);
-}
-.cards-fan-container:hover #king-fan {
-  transform: rotate(-10deg);
-}
