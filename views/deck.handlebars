@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <div class="card mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Deck3</h5>
+
+                    {{#each deck}}
+                    <strong>ID</strong>: <li data-id="{{this.deckId}}" class="list-group-item">
+                        <a href="decks/{{this.deckId}}">{{this.deckName}}</a>
+                        <button class="btn btn-danger float-right delete">ｘ</button>
+                    </li>
+                    {{/each}}
+                    <a href="/">← Back To Home</a>
+                    <p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<tbody>
+    <tr id="form-row">
+        {{!-- <form id="deck-form" action="api/deck" method="POST"> --}}
+        <form id="deck-form">
+
+            <td colspan=" 4">
+                <input placeholder="Enter a deck name" id="deckName" name="deckName" type="text" />
+            </td>
+            <button type="submit" class="btn btn-success">Create Deck</button>
+            </td>
+    </tr>
+</tbody>
