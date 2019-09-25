@@ -1,27 +1,22 @@
 module.exports = function(sequelize, DataTypes) {
-  var card = sequelize.define("card", {
+  var Card = sequelize.define("Card", {
     cardTitle: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
+      allowNull: false
     },
     cardDescription: {
       type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [1]
-      }
+      allowNull: false
     }
   });
-  card.associate = function(models) {
-    card.belongsTo(models.deck, {
-      onDelete: "CASCADE",
+
+  Card.associate = function(models) {
+    Card.belongsTo(models.Deck, {
       foreignKey: {
         allowNull: false
       }
     });
   };
-  return card;
+
+  return Card;
 };
