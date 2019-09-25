@@ -16,26 +16,40 @@ body,
 html {
   height: 100%;
 }
+
 .card-fan {
   position: absolute;
   width: 200px;
   transform-origin: bottom;
-  transition: all 0.3s linear;
+  transition: all .3s linear;
 }
-.cards-fan-container:hover #ten-fan {
-  transform: rotate(20deg);
+
+#ten-fan{
+  transform: rotate(1deg)
 }
-.cards-fan-container:hover #ace-fan {
-  transform: rotate(-20deg);
+
+#ace-fan{
+  transform: rotate(-1deg)
 }
-.cards-fan-container:hover #jack-fan {
-  transform: rotate(10deg);
+
+#jack-fan{
+  transform: rotate(.5deg)
 }
-.cards-fan-container:hover #king-fan {
-  transform: rotate(-10deg);
+
+#king-fan{
+  transform: rotate(-.5deg)
 }
-#ten-fan {
+
+.cards-fan-container:hover #ten-fan{
+  transform: rotate(20deg)
 }
-#king-fan {
-  transform: rotate(-0.5deg);
+.cards-fan-container:hover #ace-fan{
+  transform: rotate(-20deg)
 }
+.cards-fan-container:hover #jack-fan{
+  transform: rotate(10deg)
+}
+.cards-fan-container:hover #king-fan{
+  transform: rotate(-10deg)
+} 
+ 94 
