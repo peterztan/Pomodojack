@@ -10,6 +10,7 @@ module.exports = function(app) {
         msg: "Welcome!",
         deck: dbDeck
       });
+      // res.render("card");
     });
   });
   app.get("/decks", function(req, res) {
@@ -26,6 +27,16 @@ module.exports = function(app) {
     db.Deck.findOne({ where: { id: req.params.id } }).then(function(dbDeck) {
       res.render("OneDeck", {
         deck: dbDeck
+      });
+    });
+  });
+  app.get("/cards", function(req, res) {
+    db.Card.findAll({
+      include: [db.Deck]
+    }).then(function(dbCard) {
+      res.render("OneDeck", {
+        msg: "Cards!",
+        card: dbCard
       });
     });
   });
