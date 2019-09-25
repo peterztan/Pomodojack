@@ -1,5 +1,5 @@
 // Get references to page elements
-var $cardText = $("#card-text");
+var $cardName = $("#card-text");
 var $cardDescription = $("#card-description");
 var $submitBtn = $("#submit");
 var $cardList = $("#card-list");
@@ -96,7 +96,7 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var card = {
-    cardTitle: $cardText.val().trim(),
+    cardTitle: $cardName.val().trim(),
     cardDescription: $cardDescription.val().trim()
   };
 
