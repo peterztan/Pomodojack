@@ -22,7 +22,13 @@ module.exports = function(app) {
       });
     });
   });
-
+  app.get("/deck/:id", function(req, res) {
+    db.Deck.findOne({ where: { id: req.params.id } }).then(function(dbDeck) {
+      res.render("OneDeck", {
+        deck: dbDeck
+      });
+    });
+  });
   // Load example page and pass in an example by id
   app.get("/card/:id", function(req, res) {
     var query = {};
