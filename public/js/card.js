@@ -1,5 +1,5 @@
 // Get references to page elements
-var $cardText = $("#card-text");
+var $cardName = $("#card-text");
 var $cardDescription = $("#card-description");
 var $submitBtn = $("#submit");
 var $cardList = $("#card-list");
@@ -15,7 +15,6 @@ if (url.indexOf("?deck_id=") !== -1) {
 } else {
   getPosts();
 }
-
 var getPosts = function() {},
   displayEmpty = function() {},
   initializeRows = function() {};
@@ -97,7 +96,7 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var card = {
-    cardTitle: $cardText.val().trim(),
+    cardTitle: $cardName.val().trim(),
     cardDescription: $cardDescription.val().trim()
   };
 
@@ -110,7 +109,7 @@ var handleFormSubmit = function(event) {
     refreshCards();
   });
 
-  $cardText.val("");
+  $cardName.val("");
   $cardDescription.val("");
 };
 
