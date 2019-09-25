@@ -3,7 +3,8 @@
 }
 
 body {
-  background: url('https://media.giphy.com/media/3YHzVE6tPeiBkYSFKx/giphy.gif') no-repeat;
+  background: url("https://media.giphy.com/media/3YHzVE6tPeiBkYSFKx/giphy.gif")
+    no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -11,6 +12,30 @@ body {
   height: 100%;
 }
 
-body, html {
+body,
+html {
   height: 100%;
+}
+.card-fan {
+  position: absolute;
+  width: 200px;
+  transform-origin: bottom;
+  transition: all 0.3s linear;
+}
+.cards-fan-container:hover #ten-fan {
+  transform: rotate(20deg);
+}
+.cards-fan-container:hover #ace-fan {
+  transform: rotate(-20deg);
+}
+.cards-fan-container:hover #jack-fan {
+  transform: rotate(10deg);
+}
+.cards-fan-container:hover #king-fan {
+  transform: rotate(-10deg);
+}
+#ten-fan {
+}
+#king-fan {
+  transform: rotate(-0.5deg);
 }
