@@ -1,6 +1,6 @@
 // Get references to page elements
-var $cardName = $("#card-text");
-var $cardDescription = $("#card-description");
+var $cardName = $("#cardname");
+var $cardDescription = $("#cardDescription");
 var $submitBtn = $("#submit");
 var $cardList = $("#card-list");
 
@@ -66,7 +66,7 @@ var refreshCards = function() {
   API.getCards().then(function(data) {
     var $cards = data.map(function(card) {
       var $a = $("<a>")
-        .text(card.text)
+        .text(card.cardTitle)
         .attr("href", "/card/" + card.id);
 
       var $li = $("<li>")
@@ -100,7 +100,7 @@ var handleFormSubmit = function(event) {
     cardDescription: $cardDescription.val().trim()
   };
 
-  if (!card.text) {
+  if (!card.cardTitle) {
     alert("You must enter card title");
     return;
   }
