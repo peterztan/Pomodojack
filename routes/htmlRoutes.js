@@ -5,7 +5,7 @@ module.exports = function(app) {
     db.Deck.findAll({
       include: [db.Card]
     }).then(function(dbDeck) {
-      console.log(dbDeck);
+      // console.log(dbDeck);
       res.render("index", {
         msg: "Welcome!",
         deck: dbDeck
@@ -17,7 +17,7 @@ module.exports = function(app) {
       include: [db.Card]
     }).then(function(dbDeck) {
       res.render("deck", {
-        msg: "decks!",
+        msg: "Decks!",
         deck: dbDeck
       });
     });
