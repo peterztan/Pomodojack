@@ -2,16 +2,17 @@ var db = require("../models");
 
 module.exports = function(app) {
   app.get("/", function(req, res) {
-    db.deck
-      .findAll({
-        include: [db.card]
-      })
-      .then(function(dbDeck) {
-        res.render("index", {
-          msg: "Welcome!",
-          deck: dbDeck
-        });
-      });
+    // db.deck
+    //   .findAll({
+    //     include: [db.card]
+    //   })
+    //   .then(function(dbDeck) {
+        res.render("index")
+        // res.render("index", {
+      //     msg: "Welcome!",
+      //     deck: dbDeck
+      //   });
+      // });
   });
 
   // Load example page and pass in an example by id

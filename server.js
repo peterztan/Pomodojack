@@ -35,6 +35,7 @@ app.set("view engine", "handlebars");
 // Routes
 require("./routes/Card-Api-Routes")(app);
 require("./routes/Deck-Api-Routes")(app);
+require("./routes/loginRegisterRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
 var syncOptions = { force: false };
