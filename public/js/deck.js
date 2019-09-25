@@ -77,7 +77,7 @@ var handleFormSubmit = function(event) {
     refreshDeck();
   });
 
-  $deckName.val("");
+  deck.deckName.val("");
   // $exampleDescription.val("");
 };
 
