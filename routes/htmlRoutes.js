@@ -7,8 +7,21 @@ module.exports = function(app) {
         include: [db.card]
       })
       .then(function(dbDeck) {
+        console.log(dbDeck);
         res.render("index", {
           msg: "Welcome!",
+          deck: dbDeck
+        });
+      });
+  });
+  app.get("/decks", function(req, res) {
+    db.deck
+      .findAll({
+        include: [db.card]
+      })
+      .then(function(dbDeck) {
+        res.render("deck", {
+          msg: "decks!",
           deck: dbDeck
         });
       });

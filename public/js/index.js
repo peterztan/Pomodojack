@@ -1,5 +1,5 @@
 // Get references to page elements
-var $deckName = $("#deckName");
+var $deckname = $("#deckname");
 var $submitBtn = $("#submit");
 var $deckList = $("#deck-list");
 
@@ -15,7 +15,7 @@ var API = {
       data: JSON.stringify(deck)
     });
   },
-  getDeck: function() {
+  getDecks: function() {
     $.ajax({
       url: "api/deck",
       type: "GET"
@@ -29,18 +29,18 @@ var API = {
   }
 };
 
-// refreshdeck gets new deck from the db and repopulates the list
-var refreshDeck = function() {
-  API.getDeck().then(function(data) {
+// refreshExamples gets new examples from the db and repopulates the list
+var refreshDecks = function() {
+  API.getDecks().then(function(data) {
     var $decks = data.map(function(deck) {
       var $a = $("<a>")
-        .text(deck.deckName)
-        .attr("href", "/deck/" + deck.id);
+        .text(deck.deckname)
+        .attr("href", "/decks/" + deck.deckid);
 
       var $li = $("<li>")
         .attr({
           class: "list-group-item",
-          "data-id": deck.id
+          "data-id": deck.deckid
         })
         .append($a);
 
@@ -58,41 +58,39 @@ var refreshDeck = function() {
   });
 };
 
-// handleFormSubmit is called whenever we submit a new deck
-// Save the new deck to the db and refresh the list
-var handleFormSubmit = function() {
+// handleFormSubmit is called whenever we submit a new example
+// Save the new example to the db and refresh the list
+var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var deck = {
-    deckName: $deckName.val().trim()
-    // description: $exampleDescription.val().trim()
+    deckName: $deckname.val().trim()
   };
 
   if (!deck.deckName) {
-    alert("You must enter deck name");
+    alert("You must enter a deck name");
     return;
   }
 
   API.saveDeck(deck).then(function() {
-    refreshDeck();
+    refreshDecks();
   });
 
-  $deckName.val("");
-  // $exampleDescription.val("");
+  $deckname.val("");
 };
 
-// handleDeleteBtnClick is called when an deck's delete button is clicked
-// Remove the deck from the db and refresh the list
+// handleDeleteBtnClick is called when an example's delete button is clicked
+// Remove the example from the db and refresh the list
 var handleDeleteBtnClick = function() {
   var idToDelete = $(this)
     .parent()
     .attr("data-id");
 
-  API.deleteDeck(idToDelete).then(function() {
-    refreshDeck();
+  API.deleteExample(idToDelete).then(function() {
+    refreshExamples();
   });
 };
 
-// // Add event listeners to the submit and delete buttons
+// Add event listeners to the submit and delete buttons
 $submitBtn.on("click", handleFormSubmit);
 $deckList.on("click", ".delete", handleDeleteBtnClick);
