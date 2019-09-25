@@ -1,11 +1,11 @@
 <div id="home">
   <div class="container">
     <div class="row">
-      <div class="col-8 offset-2">
+      <div class="col s8 offset-2">
         <h1>{{msg}}</h1>
         <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4">
-          <div class="form-group">
+        <form class="row">
+          <div class="input-field">
             <label for="deckname">Deck Name</label>
             <input type="text" id="deckname" class="form-control" aria-describedby="deckname"
               placeholder="Enter Deck Name" action="/api/deck" method="POST">
@@ -17,31 +17,98 @@
           </div> --}}
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
+
+
+        <!-- HTML -->
+
+
         <h3>Decks:</h3>
-        <ul id="deck-list" class="list-group">
+        <ul id="deck-list" class="collection">
           {{#each deck}}
-          <li data-id="{{this.deckId}}" class="list-group-item">
+          <li data-id="{{this.deckId}}" class="collection-item">
             <a href="deck/{{this.deckId}}">{{this.deckName}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
+            <button class="btn-floating btn-large waves-effect waves-light red delete">ｘ</button>
           </li>
           {{/each}}
 
 
         </ul>
 
-        <div class="container cards">
+        <div class="container">
+
           <div class="row">
-            <div class="col-md-2 col-sm-2">
-              <a class="btn btn-light" href="/cms">New Post</a>
+            <div class="col s2 m2">
+              <a class="waves-effect waves-light btn" href="/cms">New Post</a>
             </div>
-            <div class="col-md-2 col-sm-2">
-              <a class="btn btn-light" href="/deck">Manage Decks</a>
+            <div class="col s2 m2">
+              <a class="waves-effect waves-light btn" href="/deck">Manage Decks</a>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-12 cards-container">
+            <div class="col cards-fan-container s12 m6">
+              <div class="card card-fan" id="ace-fan">
+                <div class="card-content white-text">
+                  <span class="card-title">Card Title</span>
+                  <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">This is a link</a>
+                  <a href="#">This is a link</a>
+                </div>
+
+              </div>
+              <div class="card card-fan" id="king-fan">
+                <div class="card-content white-text">
+                  <span class="card-title">Card Title</span>
+                  <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">This is a link</a>
+                  <a href="#">This is a link</a>
+                </div>
+
+              </div>
+              <div class="card card-fan" id="queen-fan">
+                <div class="card-content white-text">
+                  <span class="card-title">Card Title</span>
+                  <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">This is a link</a>
+                  <a href="#">This is a link</a>
+                </div>
+
+              </div>
+              <div class="card card-fan" id="jack-fan">
+                <div class="card-content white-text">
+                  <span class="card-title">Card Title</span>
+                  <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">This is a link</a>
+                  <a href="#">This is a link</a>
+                </div>
+
+              </div>
+              <div class="card card-fan" id="ten-fan">
+                <div class="card-content white-text">
+                  <span class="card-title">Card Title</span>
+                  <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                  <a href="#">This is a link</a>
+                  <a href="#">This is a link</a>
+                </div>
+
+              </div>
             </div>
           </div>
+
         </div>
 
 
@@ -51,5 +118,7 @@
   </div>
 </div>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="/js/index.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
