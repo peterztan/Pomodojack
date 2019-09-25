@@ -34,3 +34,8 @@ html {
 .cards-fan-container:hover #king-fan {
   transform: rotate(-10deg);
 }
+#ten-fan {
+}
+#king-fan {
+  transform: rotate(-0.5deg);
+}

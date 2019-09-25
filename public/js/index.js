@@ -39,7 +39,7 @@ var refreshDecks = function() {
 
       var $li = $("<li>")
         .attr({
-          class: "list-group-item",
+          class: "collection-item",
           "data-id": deck.deckid
         })
         .append($a);

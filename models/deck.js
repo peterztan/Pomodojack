@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var deck = sequelize.define("deck", {
+  var Deck = sequelize.define("Deck", {
     deckName: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -8,11 +8,11 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
-  deck.associate = function(models) {
+  Deck.associate = function(models) {
     // deck.belongsTo(models.user, { onDelete: "CASCADE" });
-    deck.hasMany(models.card, {
+    Deck.hasMany(models.Card, {
       onDelete: "CASCADE"
     });
   };
-  return deck;
+  return Deck;
 };

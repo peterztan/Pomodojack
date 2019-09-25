@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var card = sequelize.define("card", {
+  var Card = sequelize.define("Card", {
     cardTitle: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -15,13 +15,13 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
-  card.associate = function(models) {
-    card.belongsTo(models.deck, {
+  Card.associate = function(models) {
+    Card.belongsTo(models.Deck, {
       onDelete: "CASCADE",
       foreignKey: {
         allowNull: false
       }
     });
   };
-  return card;
+  return Card;
 };
