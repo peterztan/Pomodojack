@@ -1,62 +1,55 @@
 <div id="home" class="container">
   <div class="row">
     <div class="col s12">
-      <div class="row">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="input-field col s6" action="/api/deck" method="POST">
-          <input type="text" id="deckname" class="validate">
-          <label for="deckname">Deck Name</label>
+
+      <h1>{{msg}}</h1>
+      <h2>This is our Home Page!</h2>
+      <form class="input-field col s6" action="/api/deck" method="POST">
+        <input type="text" id="deckname" class="validate">
+        <label for="deckname">Deck Name</label>
 
 
-          {{!-- <div class="form-group">
+        {{!-- <div class="form-group">
                     <label for="example-description">Example Description</label>
                     <textarea class="form-control" id="example-description" aria-describedby="example-description"
                       placeholder="Enter Example Description"></textarea>
                     </div> --}}
 
-          <button id="submit" class="btn waves-effect waves-light" type="submit" name="action">Submit
-            <i class="material-icons right">send</i>
-          </button>
-        </form>
-      </div>
+        <button id="submit" class="btn waves-effect waves-light" type="submit" name="action">Submit
+          <i class="material-icons right">send</i>
+        </button>
+      </form>
+
     </div>
   </div>
-
 
   <div class="row">
-    <h3>Decks:</h3>
-    <ul id="deck-list" class="collection">
+    <div class="col s12 deck-container">
+      <h3>Decks:</h3>
+      <ul id="deck-list" class="collection">
 
-      {{#each deck}}
-      <li data-id="{{this.deckId}}" class="collection-item">
-        <a href="deck/{{this.deckId}}">{{this.deckName}}</a>
-        <button class="btn-floating btn-large waves-effect waves-light red delete">ｘ</button>
-      </li>
-      {{/each}}
-    </ul>
-    <div class="container cards">
-      <div class="row">
-        {{!-- <div class="col-md-2 col-sm-2">
-                    <a class="btn btn-light" href="/index">New Post</a>
-                  </div> --}}
-        <div class="col s2 m2">
-          <a class="waves-effect btn waves-light" href="/decks">View Decks</a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12 cards-container">
-          <a class="waves-effect waves-light btn" href="/cms">New Post</a>
-        </div>
-        <div class="col s2 m2">
-          <a class="waves-effect waves-light btn" href="/deck">Manage Decks</a>
-        </div>
-      </div>
+        {{#each deck}}
+        <li data-id="{{this.deckId}}" class="collection-item">
+          <a href="deck/{{this.deckId}}">{{this.deckName}}</a>
+          <button class="btn-floating btn-large waves-effect waves-light red delete">ｘ</button>
+        </li>
+        {{/each}}
+      </ul>
     </div>
   </div>
 
+  <div class="row">
+    <div class="col s12 cards-container">
+      <a class="waves-effect waves-light btn" href="/cms">New Post</a>
+      <a class="waves-effect waves-light btn" href="/deck">Manage Decks</a>
+      <a class="waves-effect btn waves-light" href="/decks">View Decks</a>
+    </div>
+  </div>
 </div>
+
+
 </div>
+
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>
