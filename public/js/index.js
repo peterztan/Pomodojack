@@ -6,7 +6,7 @@ var $deckList = $("#deck-list");
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveDeck: function(deck) {
-    $.ajax({
+    return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
@@ -16,13 +16,13 @@ var API = {
     });
   },
   getDecks: function() {
-    $.ajax({
+    return $.ajax({
       url: "api/deck",
       type: "GET"
     });
   },
   deleteDeck: function(id) {
-    $.ajax({
+    return $.ajax({
       url: "api/deck/" + id,
       type: "DELETE"
     });
@@ -34,13 +34,13 @@ var refreshDecks = function() {
   API.getDecks().then(function(data) {
     var $decks = data.map(function(deck) {
       var $a = $("<a>")
-        .text(deck.deckname)
-        .attr("href", "/decks/" + deck.deckid);
+        .text(deck.deckName)
+        .attr("href", "/decks/" + deck.id);
 
       var $li = $("<li>")
         .attr({
           class: "collection-item",
-          "data-id": deck.deckid
+          "data-id": deck.id
         })
         .append($a);
 
@@ -62,7 +62,7 @@ var refreshDecks = function() {
 // Save the new example to the db and refresh the list
 var handleFormSubmit = function(event) {
   event.preventDefault();
-
+  console.log("index event");
   var deck = {
     deckName: $deckname.val().trim()
   };

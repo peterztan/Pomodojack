@@ -1,33 +1,43 @@
-<div class="container">
-    <div class="row">
-        <div class="col s8 offset-s2">
-            <div class="card-content">
-                <h5 class="card-title">Deck3</h5>
+<div id="home">
+    <div class="container">
+        <div class="row">
+            <div class="col s8 offset-s2">
+                <div class="card-content">
+                    <h5 class="card-title">Deck3</h5>
+                    <h1>{{msg}}</h1>
 
-                {{#each deck}}
-                <strong>ID</strong>: <li data-id="{{this.deckId}}" class="collection-item">
-                    <a href="decks/{{this.deckId}}">{{this.deckName}}</a>
-                    <button class="btn red float-right delete">ｘ</button>
-                </li>
-                {{/each}}
-                <a href="/">← Back To Home</a>
-                <p>
+                    <form class="row">
+                        <div class="input-field">
+                            <form class="clearfix mb-4">
+                                <div class="form-group" action="/api/deck" method="POST">
+                                    <label for="deckname">Deck Name</label>
+                                    <input type="text" id="deckname" class="form-control" aria-describedby="deckname"
+                                        placeholder="Enter Deck Name">
+                                </div>
 
+                                <button id="submit" class="btn btn-primary float-right">Submit</button>
+                            </form>
+
+
+                            <h3>Decks:</h3>
+                            <ul id="deck-list" class="collection">
+
+                                {{#each deck}}
+                                <li data-id="{{this.id}}" class="collection-item">
+                                    <a href="deck/{{this.id}}">{{this.deckName}}</a>
+                                    <button
+                                        class="btn-floating btn-large waves-effect waves-light red delete">ｘ</button>
+                                </li>
+                                {{/each}}
+
+
+                            </ul>
+                        </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
 
-<tbody>
-    <tr id="form-row">
-        {{!-- <form id="deck-form" action="api/deck" method="POST"> --}}
-        <form id="deck-form">
-
-            <td colspan=" 4">
-                <input placeholder="Enter a deck name" id="deckName" name="deckName" type="text" />
-            </td>
-            <button type="submit" class="btn btn-success">Create Deck</button>
-            </td>
-    </tr>
-</tbody>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="/js/deck.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

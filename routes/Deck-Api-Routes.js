@@ -23,14 +23,15 @@ module.exports = function(app) {
   app.post("/api/deck", function(req, res) {
     console.log(req.body);
     db.Deck.create(req.body).then(function(dbDeck) {
+      console.log("got here in deck api routes");
       res.json(dbDeck);
     });
   });
 
-  app.delete("/api/deck/:deckid", function(req, res) {
+  app.delete("/api/deck/:id", function(req, res) {
     db.Deck.destroy({
       where: {
-        deckid: req.params.deckid
+        deckid: req.params.id
       }
     }).then(function(dbDeck) {
       res.json(dbDeck);

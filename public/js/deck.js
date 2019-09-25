@@ -1,12 +1,12 @@
 // Get references to page elements
-var $deckName = $("#deckName");
+var $deckname = $("#deckname");
 var $submitBtn = $("#submit");
 var $deckList = $("#deck-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveDeck: function(deck) {
-    $.ajax({
+    return $.ajax({
       headers: {
         "Content-Type": "application/json"
       },
@@ -15,14 +15,14 @@ var API = {
       data: JSON.stringify(deck)
     });
   },
-  getDeck: function() {
-    $.ajax({
+  getDecks: function() {
+    return $.ajax({
       url: "api/deck",
       type: "GET"
     });
   },
   deleteDeck: function(id) {
-    $.ajax({
+    return $.ajax({
       url: "api/deck/" + id,
       type: "DELETE"
     });
@@ -30,8 +30,8 @@ var API = {
 };
 
 // refreshdeck gets new deck from the db and repopulates the list
-var refreshDeck = function() {
-  API.getDeck().then(function(data) {
+var refreshDecks = function() {
+  API.getDecks().then(function(data) {
     var $decks = data.map(function(deck) {
       var $a = $("<a>")
         .text(deck.deckName)
@@ -60,11 +60,12 @@ var refreshDeck = function() {
 
 // handleFormSubmit is called whenever we submit a new deck
 // Save the new deck to the db and refresh the list
-var handleFormSubmit = function() {
+var handleFormSubmit = function(event) {
   event.preventDefault();
+  console.log("gets here to event");
 
   var deck = {
-    deckName: $deckName.val().trim()
+    deckName: $deckname.val().trim()
     // description: $exampleDescription.val().trim()
   };
 
@@ -74,10 +75,10 @@ var handleFormSubmit = function() {
   }
 
   API.saveDeck(deck).then(function() {
-    refreshDeck();
+    refreshDecks();
   });
 
-  $deckName.val("");
+  $deckname.val("");
   // $exampleDescription.val("");
 };
 
@@ -89,7 +90,7 @@ var handleDeleteBtnClick = function() {
     .attr("data-id");
 
   API.deleteDeck(idToDelete).then(function() {
-    refreshDeck();
+    refreshDecks();
   });
 };
 
