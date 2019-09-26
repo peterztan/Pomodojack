@@ -13,6 +13,19 @@ module.exports = function(app) {
       // res.render("card");
     });
   });
+  app.get("/about", function(req, res) {
+    db.Deck.findAll({}).then(function() {
+      // console.log(dbDeck);
+      res.render("about", {
+        msg: "Welcome!",
+        imgURL1: "../public/images/petert.jpg",
+        imgURL2: "../public/images/sandram.jpg",
+        imgURL3: "../public/images/maggyj.jpg",
+        imgURL4: "../public/images/#"
+      });
+      // res.render("card");
+    });
+  });
   app.get("/decks", function(req, res) {
     db.Deck.findAll({
       include: [db.Card]
