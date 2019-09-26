@@ -70,14 +70,6 @@ module.exports = {
       });
   },
   register: function(req, res) {
-    /* 
-      req.body => {
-        first_name: "Alex",
-        last_name: "Rosenkranz",
-        email: "alex@alex.com",
-        password: "123456"
-      }
-    */
     db
       .Users
       .create(req.body)

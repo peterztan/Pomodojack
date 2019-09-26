@@ -1,7 +1,7 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
-
+var routes = require("./routes/userRoutes");
 var db = require("./models");
 
 var app = express();
@@ -22,6 +22,7 @@ app.engine(
 app.set("view engine", "handlebars");
 
 // Routes
+app.use(routes);
 require("./routes/Card-Api-Routes")(app);
 require("./routes/Deck-Api-Routes")(app);
 require("./routes/htmlRoutes")(app);
