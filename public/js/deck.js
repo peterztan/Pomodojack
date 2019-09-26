@@ -40,16 +40,16 @@ var refreshDecks = function() {
       var $div = $("<div>")
       // 1=ace 2=king 3=queen 4=jack 5=ten
         .attr({
-          class: "col s3 offset-s1 card hoverable",
+          class: "card-item hoverable",
           "data-id": deck.id
         })
         .append($a);
 
-      var $button = $("<button>")
+      /*var $button = $("<button>")
         .addClass("btn-floating btn-small waves-effect waves-light red right delete")
         .text("ｘ");
 
-      $div.append($button);
+      $div.append($button);*/
 
       return $div;
     });
