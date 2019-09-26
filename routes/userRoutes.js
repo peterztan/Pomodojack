@@ -13,7 +13,7 @@ router
   .post(userController.register);
 
 router
-  .route('/status')
+  .route('/api/users/status')
   .get(userController.userCheck);
 
 router

@@ -14,7 +14,7 @@ $(document).ready(function() {
         data: userInfo
       })
       .then((userInfo) => {
-        location.replace(userInfo)
+        location.replace(userInfo);
       })
       .catch(err => console.log(err));
     });

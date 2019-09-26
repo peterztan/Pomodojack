@@ -5,7 +5,7 @@ module.exports = {
     db
       .Users
       .findAll({
-        attributes: ["id", "username"]
+        attributes: ["username"]
       })
       .then((dbUsers) => {res.json(dbUsers);})
       .catch(err => {
@@ -18,7 +18,7 @@ module.exports = {
     db
       .Users
       .findOne({
-        attributes: ["id", "username"],
+        attributes: ["username"],
         where: {
           username: req.params.username
         },

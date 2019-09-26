@@ -4,7 +4,7 @@ $(document).ready(function () {
       e.preventDefault();
   
       const userInfo = {
-        id: $("#user_id").val().trim(),
+        // id: $("#user_id").val().trim(),
         username: $("#user_name").val().trim(),
         password: $("#user_passw").val().trim()
       };
