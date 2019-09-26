@@ -34,7 +34,7 @@ html {
 body {
   overflow-x: hidden;
   font-size: 12px;
-  padding: 10%;
+  /* padding: 10%; */
 }
 
 .no-transition {
@@ -201,3 +201,21 @@ body {
 
 /* elements on stacked cards */
 .card-item { background: #FFFFFF; }
+
+.brand-logo {
+    margin-left: 20px;
+}
+
+#register-page
+{
+	margin-top: 80px;
+	width: 400px;
+	height: 700px;
+}
+
+#user-login
+{
+	margin-top: 80px;
+	width: 400px;
+	height: 700px;
+}
