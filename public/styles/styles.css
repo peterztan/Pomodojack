@@ -16,3 +16,13 @@ body,
 html {
   height: 100%;
 }
+
+
+
+.input-field [type=text] {
+  color: white;
+}
+
+.card {
+  margin-right: 6.25rem;
+}

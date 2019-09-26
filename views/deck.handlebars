@@ -19,16 +19,18 @@
     <div class="row">
         <div class="col s12 deck-container">
             <h3>Decks:</h3>
-            <ul id="deck-list" class="collection">
+
+            <div id="deck-list" class="row cards-fan-container">
 
                 {{#each deck}}
-                <li data-id="{{this.id}}" class="collection-item">
+                <div data-id="{{this.id}}" class="col s3 offset-s1 card hoverable">
+                    <button class="btn-floating btn-small waves-effect waves-light red right delete">ｘ</button>
+
                     <a href="deck/{{this.id}}">{{this.deckName}}</a>
 
-                    <button class="btn-floating btn-large waves-effect waves-light red delete">ｘ</button>
-                </li>
+                </div>
                 {{/each}}
-            </ul>
+            </div>
         </div>
     </div>
 

@@ -37,20 +37,21 @@ var refreshDecks = function() {
         .text(deck.deckName)
         .attr("href", "/deck/" + deck.id);
 
-      var $li = $("<li>")
+      var $div = $("<div>")
+      // 1=ace 2=king 3=queen 4=jack 5=ten
         .attr({
-          class: "list-group-item",
+          class: "col s3 offset-s1 card hoverable",
           "data-id": deck.id
         })
         .append($a);
 
       var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
+        .addClass("btn-floating btn-small waves-effect waves-light red right delete")
         .text("ｘ");
 
-      $li.append($button);
+      $div.append($button);
 
-      return $li;
+      return $div;
     });
 
     $deckList.empty();
