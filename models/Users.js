@@ -29,7 +29,7 @@ module.exports = function (sequelize, DataTypes) {
   };
 
   Users.beforeCreate(function (user) {
-    user.username = user.username.toLowerCase().replace(/\s/g, '');
+    user.username = user.username.toLowerCase().replace(/\s/g, "");
     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
     console.log(user);
   });
