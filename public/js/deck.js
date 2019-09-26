@@ -45,11 +45,11 @@ var refreshDecks = function() {
         })
         .append($a);
 
-      /*var $button = $("<button>")
+      var $button = $("<button>")
         .addClass("btn-floating btn-small waves-effect waves-light red right delete")
         .text("ｘ");
 
-      $div.append($button);*/
+      $div.append($button);
 
       return $div;
     });
