@@ -18,10 +18,10 @@ module.exports = function(app) {
       // console.log(dbDeck);
       res.render("about", {
         msg: "Welcome!",
-        imgURL1: "../public/images/petert.jpg",
-        imgURL2: "../public/images/sandram.jpg",
-        imgURL3: "../public/images/maggyj.jpg",
-        imgURL4: "../public/images/#"
+        imgURL1: "https://ca.slack-edge.com/TJP3TP97Y-UJBLLF259-9b02def75c37-48",
+        imgURL2: "https://ca.slack-edge.com/TJP3TP97Y-UJFTPC7NF-a8765baf70b1-48",
+        imgURL3: "https://ca.slack-edge.com/TJP3TP97Y-UJR8X8V7G-5484d47d6590-48",
+        imgURL4: "https://ca.slack-edge.com/TJP3TP97Y-UJC56RUPM-25da97de8c6c-48"
       });
       // res.render("card");
     });

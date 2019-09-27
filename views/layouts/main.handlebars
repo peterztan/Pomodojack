@@ -41,7 +41,9 @@
         method: 'GET'
       }).then(function (userInfo) {
         console.log(userInfo);
-        $("#loggedIn").text(`Hi ${userInfo.username}!`);
+        var name = userInfo.username.charAt(0).toUpperCase() + userInfo.username.slice(1);
+        console.log(name);
+        $("#loggedIn").text(`Hi ${name}!`);
       })
         .catch(err => console.log(err));
 
