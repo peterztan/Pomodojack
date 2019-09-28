@@ -52,4 +52,4 @@ We will be utilizing the following technologies in order to achieve the function
 ## Motivating Ourselves:
 
 >Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program.
-> - Linus Torvalds
+> --- Linus Torvalds
