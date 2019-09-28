@@ -19,20 +19,24 @@ We will be utilizing the following technologies in order to achieve the function
 
 * _At this point of the development, the full functionality of the application has not been achieved. However, we will attempt to show some functionality that we were able to achieve in the two-week development period that we had available for this project._
 
-* _For the purpose of showing our available functionality, we have two versions of the working functionality shown below:
+* _For the purpose of showing our available functionality, we have two versions of the working functionality shown below:_
 
     The Mobile functions before back-end interference:
+
     ![Mobile](public/images/Mobile.gif)
 
     The previous Desktop experience, workflow and bugs:
+
     ![Workflow-Bugs](public/images/Workflow-Bugs.gif)
 
 * _Disclaimer: the latest commit to this project caused an issue where the backend requests intercept each other thus causing different bugs, which will be shown below:_
 
     Current version bugs and workflow:
+
     ![Current-Version-Bugs](public/images/Current-Version-Bugs.gif)
 
     The Login functionality:
+
     ![Login Functionality](public/images/Login.gif)
 
 ## Possible Future Feature Implementations:
@@ -48,5 +52,4 @@ We will be utilizing the following technologies in order to achieve the function
 ## Motivating Ourselves:
 
 >Most good programmers do programming not because they expect to get paid or get adulation by the public, but because it is fun to program.
-
 > - Linus Torvalds
